@@ -22,7 +22,9 @@ class WorkoutSession(db.Model):
     # table-level validation (can't be empty/null)
     name = db.Column(db.String(20), nullable=False)
     #! Relationships
+    # this relationship is what we're not sending back
     exercise_logs = db.relationship("ExerciseLog", back_populate="workout_sessions", cascade="all, delete")
+    # in this rule
     serialize_rules = ("-exercise_logs.workoutsessions")
 
     @validates('name')
@@ -30,7 +32,7 @@ class WorkoutSession(db.Model):
         # if user enters extra spaces, .strip will delete the extra spaces before or after the name
         if not value or len(value.strip()) == 0:
             # ! check back re toast
-            raise ValueError("Workout title cannot be empty")
+            raise ValueError("Workout name cannot be empty")
         return value.strip()
     
 
