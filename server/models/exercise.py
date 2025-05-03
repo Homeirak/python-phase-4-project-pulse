@@ -1,3 +1,4 @@
+# exercise.py
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 from sqlalchemy.orm import validates
@@ -5,13 +6,14 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
 
 
+
 from config import db
 
 # Models go here!
-class Exercise(db.Model):
+class Exercise(db.Model, SerializerMixin):
     __tablename__= "exercises"
     
-    id = db.Column(db.Integer, Primary_Key=True)
+    id = db.Column(db.Integer, primary_key=True)
     # todo lookup diffference between string and text
     # ! cannot be empty
     name = db.Column(db.String, nullable=False)
@@ -25,8 +27,8 @@ class Exercise(db.Model):
     category= db.Column(db.String, nullable=False)
 
     # ! Relationships
-    exercise_logs = db.relationship("Exercise_logs", back_populates="exercise", cascade="all, delete")
-    serialize_rules = ("-exercise_logs.exercises")
+    exercise_logs = db.relationship("ExerciseLog", back_populates="exercise", cascade="all, delete")
+    serialize_rules = ("-exercise_logs.exercises", )
 
     # ! Do I want to add validations? 
     @validates('name')

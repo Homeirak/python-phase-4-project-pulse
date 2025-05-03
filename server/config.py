@@ -1,3 +1,4 @@
+# config.py
 # Standard library imports
 
 # Remote library imports
@@ -7,12 +8,16 @@ from flask_migrate import Migrate
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
+import os
 
 # Local imports
-
+basedir = os.path.abspath(os.path.dirname(__file__))
+db_path = os.path.join(basedir, 'instance', 'app.db')
 # Instantiate app, set attributes
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+#! more specific path to database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/homeirak/Development/code/phase-4/python-phase-4-project-pulse/server/instance/app.db'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
 

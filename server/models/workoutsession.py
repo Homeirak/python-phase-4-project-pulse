@@ -1,3 +1,4 @@
+#  workoutsession.py
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData, DateTime
 from sqlalchemy.orm import validates
@@ -13,7 +14,7 @@ from config import db
 
 # Models go here!
 # columns. validaions, and relationships
-class WorkoutSession(db.Model):
+class WorkoutSession(db.Model, SerializerMixin):
     __tablename__='workout_sessions'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -23,7 +24,7 @@ class WorkoutSession(db.Model):
     name = db.Column(db.String(20), nullable=False)
     #! Relationships
     # this relationship is what we're not sending back
-    exercise_logs = db.relationship("ExerciseLog", back_populate="workout_sessions", cascade="all, delete")
+    exercise_logs = db.relationship("ExerciseLog", back_populates="workout_session", cascade="all, delete")
     # in this rule
     serialize_rules = ("-exercise_logs.workoutsessions")
 

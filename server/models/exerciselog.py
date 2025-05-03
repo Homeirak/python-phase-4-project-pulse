@@ -1,3 +1,4 @@
+#  exerciselog.py
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 from sqlalchemy.orm import validates
@@ -8,7 +9,7 @@ from sqlalchemy_serializer import SerializerMixin
 from config import db
 
 # Models go here!
-class ExerciseLog(db.Model):
+class ExerciseLog(db.Model, SerializerMixin):
     __tablename__ = "exercise_logs"
     id = db.Column(db.Integer, primary_key=True)
     # todo ondelete when a workoutsession is deleted, all its children are deleted check workout session
@@ -23,8 +24,8 @@ class ExerciseLog(db.Model):
     # ! Relationships
     # establishing a through relationship
     # you're getting exercises through exercise_logs
-    exercise = db.relationship("Exercise", back_populates="exercise-logs", cascade="all, delete")
-    workout_session = db.relationship("WorkoutSession", back_populates="workout_sessions",cascade="all, delete")
+    exercise = db.relationship("Exercise", back_populates="exercise_logs", cascade="all, delete")
+    workout_session = db.relationship("WorkoutSession", back_populates="exercise_logs", cascade="all, delete")
     serialize_rules = ("-exercise_logs.exerccise_logs")
 
     #? no validations needed
