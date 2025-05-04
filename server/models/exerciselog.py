@@ -26,6 +26,7 @@ class ExerciseLog(db.Model, SerializerMixin):
     # you're getting exercises through exercise_logs
     exercise = db.relationship("Exercise", back_populates="exercise_logs", cascade="all, delete")
     workout_session = db.relationship("WorkoutSession", back_populates="exercise_logs", cascade="all, delete")
-    serialize_rules = ("-exercise_logs.exerccise_logs")
+    serialize_rules = ("-exercise.exercise_logs", "-workout_session.exercise_logs")
+
 
     #? no validations needed

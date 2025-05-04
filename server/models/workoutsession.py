@@ -4,6 +4,7 @@ from sqlalchemy import MetaData, DateTime
 from sqlalchemy.orm import validates
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
+from datetime import datetime
 
 #!testcomment
 #todo testcomment
@@ -26,7 +27,7 @@ class WorkoutSession(db.Model, SerializerMixin):
     # this relationship is what we're not sending back
     exercise_logs = db.relationship("ExerciseLog", back_populates="workout_session", cascade="all, delete")
     # in this rule
-    serialize_rules = ("-exercise_logs.workoutsessions")
+    serialize_rules = ("-exercise_logs.workoutsessions",)
 
     @validates('name')
     def validate_name(self, key, value):

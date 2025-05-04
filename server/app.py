@@ -6,8 +6,9 @@ from models.workoutsession import WorkoutSession
 from models.exerciselog import ExerciseLog
 
 # routes
-from routes.exerciseroute import ExercisesResource
-
+from routes.exerciseroute import ExercisesResource, ExerciseIdResource
+from routes.workoutsessionsroute import WorkoutSessionResource 
+from routes.exerciselogsroute import  ExerciseLogResource
 # Standard library imports
 
 # Remote library imports
@@ -27,6 +28,9 @@ from config import app, db, api
 
 # GET and POST always go in the same endppoint, convention to make endpoint plural
 api.add_resource(ExercisesResource, '/exercises')
+api.add_resource(ExerciseIdResource, '/exercises/<int:exercise_id>')
+api.add_resource(WorkoutSessionResource, '/workoutsessions')
+api.add_resource(ExerciseLogResource, '/exerciselogs')
 
 
 if __name__ == '__main__':
