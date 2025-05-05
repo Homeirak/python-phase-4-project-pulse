@@ -1,0 +1,50 @@
+// workoutdetailspage.js
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import NavBar from "./NavBar";
+import Header from "./Header";
+import ExerciseLogList from "./ExerciseLogList";
+import NewExerciseLogForm from "./NewExerciseLogForm";
+
+function WorkoutDetailPage() {
+    const { id } = useParams();
+    const [workout, setWorkout] = useState(null);
+    const [exerciseLogs, setExerciseLogs] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5555/workoutsessions/${id}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setWorkout(data);
+                setExerciseLogs(data.exercise_logs || []);
+            })
+            .catch((error) => console.error("Error fetching workout details:", error));
+    }, [id]);
+
+    const handleAddLog = (newLog) => {
+        setExerciseLogs([...exerciseLogs, newLog]);
+    };
+
+    return (
+        <div className="workout-detail-page">
+            <NavBar />
+            <Header />
+            {workout ? (
+                <div>
+                    <h2>{workout.name}</h2>
+                    <p>Date: {workout.date}</p>
+
+                    <h3>Exercise Logs</h3>
+                    <ExerciseLogList logs={exerciseLogs} />
+
+                    <h3>Add New Exercise Log</h3>
+                    <NewExerciseLogForm workoutId={id} onAddLog={handleAddLog} />
+                </div>
+            ) : (
+                <p>Loading workout details...</p>
+            )}
+        </div>
+    );
+}
+
+export default WorkoutDetailPage;
