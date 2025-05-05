@@ -1,10 +1,10 @@
 // workoutdetailspage.js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import ExerciseLogList from "./ExerciseLogList";
-import NewExerciseLogForm from "./NewExerciseLogForm";
+import NavBar from "../../components/Navbar/navbar";
+import Header from "../../components/Header/header";
+import ExerciseLogList from "../../components/ExerciseLogList/exerciseloglist";
+import NewExerciseLogForm from "../../components/ NewExerciseLogForm/newexerciselogform";
 
 function WorkoutDetailPage() {
     const { id } = useParams();
@@ -27,8 +27,7 @@ function WorkoutDetailPage() {
 
     return (
         <div className="workout-detail-page">
-            <NavBar />
-            <Header />
+            
             {workout ? (
                 <div>
                     <h2>{workout.name}</h2>

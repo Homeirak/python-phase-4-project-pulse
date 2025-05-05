@@ -33,4 +33,4 @@ db.init_app(app)
 api = Api(app)
 
 # Instantiate CORS
-CORS(app)
+CORS(app, origins=["http://localhost:3000"])

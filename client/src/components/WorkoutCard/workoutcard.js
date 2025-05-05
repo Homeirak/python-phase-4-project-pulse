@@ -11,3 +11,4 @@ function WorkoutCard({ workout }) {
         </Link>
     );
 }
+export default WorkoutCard;

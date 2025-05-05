@@ -1,9 +1,9 @@
 // workoutpage.js
 import React, { useEffect, useState } from "react";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import CreateNewButton from "./CreateNewButton";
-import WorkoutCard from "./WorkoutCard";
+import NavBar from "../../components/Navbar/navbar";
+import Header from "../../components/Header/header";
+import CreateNewButton from "../../components/CreateNewButton/createnewbutton";
+import WorkoutCard from "../../components/WorkoutCard/workoutcard";
 
 function WorkoutPage() {
     const [workouts, setWorkouts] = useState([]);
@@ -21,8 +21,6 @@ function WorkoutPage() {
 
     return (
         <div className="workout-page">
-            <NavBar />
-            <Header />
             <CreateNewButton to="/newworkoutform" label="Create New Workout" />
             <div className="workout-card-list">
                 {workouts.map((workout) => (

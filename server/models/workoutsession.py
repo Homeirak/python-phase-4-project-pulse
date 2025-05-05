@@ -27,7 +27,7 @@ class WorkoutSession(db.Model, SerializerMixin):
     # this relationship is what we're not sending back
     exercise_logs = db.relationship("ExerciseLog", back_populates="workout_session", cascade="all, delete")
     # in this rule
-    serialize_rules = ("-exercise_logs.workoutsessions",)
+    serialize_rules = ("-exercise_logs.workout_session",)
 
     @validates('name')
     def validate_name(self, key, value):

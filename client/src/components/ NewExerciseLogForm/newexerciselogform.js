@@ -37,7 +37,7 @@ function NewExerciseLogForm({ workoutId, onAddLog }) {
             time: formData.time,
         };
 
-        fetch("http://localhost:5555/exercise_logs", {
+        fetch("http://localhost:5555/exerciselogs", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newLog),

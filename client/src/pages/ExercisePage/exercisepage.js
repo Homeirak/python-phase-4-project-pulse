@@ -1,10 +1,10 @@
 // exercisepage.js
 import React, { useEffect, useState } from "react";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import DropdownFilter from "./DropdownFilter";
-import CreateNewButton from "./CreateNewButton";
-import ExerciseCard from "./ExerciseCard";
+import NavBar from "../../components/Navbar/navbar";
+import Header from "../../components/Header/header";
+import DropdownFilter from "../../components/DropDownFilter/dropdownfilter";
+import CreateNewButton from "../../components/CreateNewButton/createnewbutton";
+import ExerciseCard from "../../components/ExerciseCard/exercisecard";
 
 function ExercisePage() {
     const [exercises, setExercises] = useState([]);
@@ -15,17 +15,22 @@ function ExercisePage() {
             .then((res) => res.json())
             .then((data) => {
                 console.log("Fetched Data in Exercises:", data);
-                setExercises(data);
-                setFilteredExercises(data); // start with all shown
+    
+                if (Array.isArray(data)) {
+                    setExercises(data);
+                    setFilteredExercises(data); // start with all shown
+                } else {
+                    console.error("Expected an array but got:", data);
+                    setExercises([]); // fallback to empty array
+                    setFilteredExercises([]);
+                }
             })
             .catch((error) => console.error("Error fetching data:", error));
     }, []);
-
+    
     return (
         <div className="exercise-page">
-            <NavBar />
-            <Header />
-            <DropdownFilter
+             <DropdownFilter
                 exercises={exercises}
                 setFilteredExercises={setFilteredExercises}
         />

@@ -1,10 +1,10 @@
 // homepage.js
 import React, { useEffect, useState } from "react";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import HomePageCard from "./HomePageCard"; 
-import CardTitle from "./CardTitle";        
-import SubHeader from "./SubHeaderForHomePage";        
+import NavBar from "../../components/Navbar/navbar";
+import Header from "../../components/Header/header";
+import HomePageCard from "../../components/HomepageCards/homepagecard"; 
+import CardTitle from "../../components/CardTitle/cardtitle";        
+import SubHeader from "../../components/SubHeaderForHomepage/subheaderforhomepage";        
 
 function HomePage() {
     const [mostPopularWorkout, setMostPopularWorkout] = useState(null);
@@ -32,9 +32,6 @@ function HomePage() {
 
     return (
         <div className="home-page">
-            <NavBar />
-            <Header title="Home" />
-
             <SubHeader title="Your Workouts" /> 
 
             <div className="home-sections">

@@ -8,6 +8,7 @@ function NavBar() {
     return (
         <nav className="navbar">
             <ul className="nav-links">
+            <h1>Pulse</h1>
                 <li>
                     <Link to="/home">Home</Link>
                 </li>
@@ -16,12 +17,6 @@ function NavBar() {
                 </li>
                 <li>
                     <Link to="/workouts">Workouts</Link>
-                </li>
-                <li>
-                    <Link to="/newexerciseform">+ New Exercise</Link>
-                </li>
-                <li>
-                    <Link to="/newworkoutform">+ New Workout</Link>
                 </li>
                 {/* For testing the details page */}
                 {/* <li>
