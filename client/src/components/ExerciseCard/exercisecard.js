@@ -1,5 +1,6 @@
 // exercisecard.js
 import React, { useState } from "react";
+import { Pencil, Trash2 } from 'lucide-react'
 
 function ExerciseCard({ exercise, onDelete, onUpdate }) {
     const [isEditing, setIsEditing] = useState(false);
@@ -88,8 +89,12 @@ function ExerciseCard({ exercise, onDelete, onUpdate }) {
                     <h4>{exercise.equipment}</h4>
                     <p>{exercise.description}</p>
                     <h4>{exercise.category}</h4>
-                    <button onClick={() => setIsEditing(true)}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    
+                    <button onClick={() => setIsEditing(true)}>
+                    <Pencil size={14.5}></Pencil>
+                    </button>
+                    
+                    <button onClick={handleDelete}><Trash2 size={14.5}></Trash2></button>
                 </>
             )}
         </div>
