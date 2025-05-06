@@ -27,8 +27,20 @@ class Exercise(db.Model, SerializerMixin):
     category= db.Column(db.String, nullable=False)
 
     # ! Relationships
-    exercise_logs = db.relationship("ExerciseLog", back_populates="exercise", cascade="all, delete")
-    serialize_rules = ("-exercise_logs.exercises", )
+    # exercise_logs = db.relationship("ExerciseLog", back_populates="exercise", cascade="all, delete")
+    # serialize_rules = ("-exercise_logs.exercises", )
+    # workout_sessions = db.relationship("WorkoutSession", secondary = "exercise_logs", back_populates="exercises", cascade="all, delete")
+    # exercise_logs = db.relationship("ExerciseLog", back_populates="exercise", cascade="all, delete")
+    # serialize_rules = ("-workout_session", "-exercise_logs.exercises",)
+
+    # one-to-many to ExerciseLog
+    exercise_logs = db.relationship("ExerciseLog", back_populates="exercise", cascade="all, delete-orphan")
+
+    # many-to-many through ExerciseLog
+    workout_sessions = db.relationship("WorkoutSession", secondary="exercise_logs", back_populates="exercises")
+
+    serialize_rules = ("-workout_sessions", "-exercise_logs.exercise", )
+
 
     # ! Do I want to add validations? 
     @validates('name')

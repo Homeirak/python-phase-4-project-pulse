@@ -10,7 +10,7 @@ function NavBar() {
             <ul className="nav-links">
             <h1>Pulse</h1>
                 <li>
-                    <Link to="/home">Home</Link>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
                     <Link to="/exercise">Exercises</Link>

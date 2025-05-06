@@ -8,10 +8,11 @@ from models import Exercise, ExerciseLog, WorkoutSession
 from datetime import datetime
 import json
 from datetime import date
+from sqlalchemy_serializer import SerializerMixin
 
 # GET/POST only
 
-class ExerciseLogResource(Resource):
+class ExerciseLogResource(Resource, SerializerMixin):
     def get(self, exercise_id=None):
         try:
             exercise_logs = ExerciseLog.query.all()

@@ -5,7 +5,6 @@ from sqlalchemy.orm import validates
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
 
-
 from config import db
 
 # Models go here!
@@ -14,6 +13,7 @@ class ExerciseLog(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     # todo ondelete when a workoutsession is deleted, all its children are deleted check workout session
     # use table name!
+    
     workout_session_id = db.Column(db.Integer, db.ForeignKey("workout_sessions.id", ondelete='CASCADE'))
     exercise_id = db.Column(db.Integer, db.ForeignKey("exercises.id", ondelete='CASCADE'))
     reps = db.Column(db.Integer)
@@ -24,9 +24,6 @@ class ExerciseLog(db.Model, SerializerMixin):
     # ! Relationships
     # establishing a through relationship
     # you're getting exercises through exercise_logs
-    exercise = db.relationship("Exercise", back_populates="exercise_logs", cascade="all, delete")
-    workout_session = db.relationship("WorkoutSession", back_populates="exercise_logs", cascade="all, delete")
-    serialize_rules = ("-exercise.exercise_logs", "-workout_session.exercise_logs")
-
-
-    #? no validations needed
+    workout_session = db.relationship("WorkoutSession", back_populates="exercise_logs")
+    exercise = db.relationship("Exercise", back_populates="exercise_logs")
+    serialize_rules = ("-workout_session.exercise_logs", "-exercise.exercise_logs", )

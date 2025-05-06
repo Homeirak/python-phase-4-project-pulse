@@ -28,7 +28,7 @@ from config import app, db, api
 
 # GET and POST always go in the same endppoint, convention to make endpoint plural
 api.add_resource(ExercisesResource, '/exercises')
-api.add_resource(ExerciseIdResource, '/exercises/<int:id>')
+api.add_resource(ExerciseIdResource, '/exercises/<int:exercise_id>')
 api.add_resource(WorkoutSessionResource, '/workoutsessions')
 api.add_resource(WorkoutSessionDetailResource, '/workoutsessions/<int:id>')
 api.add_resource(ExerciseLogResource, '/exerciselogs')

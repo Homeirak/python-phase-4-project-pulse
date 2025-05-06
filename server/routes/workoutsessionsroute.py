@@ -4,6 +4,8 @@ from flask import request
 from flask_restful import Resource
 from models import WorkoutSession
 from datetime import datetime
+from sqlalchemy_serializer import SerializerMixin
+
 
 class WorkoutSessionResource(Resource):
     def get(self):
@@ -45,7 +47,7 @@ class WorkoutSessionResource(Resource):
             return {'Error': f'Unable to create workout session: {str(e)}'}, 500
 
 # NEW resource class for GET /workoutsessions/<int:id>
-class WorkoutSessionDetailResource(Resource):
+class WorkoutSessionDetailResource(Resource, SerializerMixin):
     def get(self, id):
         workout = WorkoutSession.query.get(id)
         if not workout:
