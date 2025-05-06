@@ -44,6 +44,7 @@ const DropdownFilter = ({ exercises, setFilteredExercises }) => {
                 <option value="legs">Legs</option>
                 <option value="arms">Arms</option>
                 <option value="shoulders">Shoulders</option>
+                <option value="full body">Full Body</option>
                 {/* Add more as needed */}
             </select>
 
@@ -52,6 +53,8 @@ const DropdownFilter = ({ exercises, setFilteredExercises }) => {
                 <option value="strength">Strength</option>
                 <option value="cardio">Cardio</option>
                 <option value="yoga">Yoga</option>
+                <option value="HIIT">High-Intensity Interval Training (HIIT)</option>
+                <option value="balance and stability">Balance and Stability</option>
             </select>
         </div>
     );

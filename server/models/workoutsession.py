@@ -24,9 +24,6 @@ class WorkoutSession(db.Model, SerializerMixin):
     # table-level validation (can't be empty/null)
     name = db.Column(db.String(20), nullable=False)
     #! Relationships
-    # this relationship is what we're not sending back
-    # exercises = db.relationship("Exercise", secondary= "exercise_logs", back_populates="workout_session", cascade="all, delete")
-    # exercise_logs = db.relationship("ExerciseLog", back_populates="workout_session", cascade="all, delete")
  
     # one-to-many to ExerciseLog
     exercise_logs = db.relationship("ExerciseLog", back_populates="workout_session", cascade="all, delete-orphan")

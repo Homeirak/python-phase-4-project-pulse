@@ -22,8 +22,7 @@ class ExerciseLog(db.Model, SerializerMixin):
     time = db.Column(db.Float)
 
     # ! Relationships
-    # establishing a through relationship
-    # you're getting exercises through exercise_logs
+    # the association table relationship between exercises and workout_sessions tables
     workout_session = db.relationship("WorkoutSession", back_populates="exercise_logs")
     exercise = db.relationship("Exercise", back_populates="exercise_logs")
     serialize_rules = ("-workout_session.exercise_logs", "-exercise.exercise_logs", )

@@ -27,6 +27,20 @@ function ExercisePage() {
             })
             .catch((error) => console.error("Error fetching data:", error));
     }, []);
+    //! update card
+    const handleExerciseUpdate = (updatedExercise) => {
+        const updatedList = exercises.map((ex) =>
+            ex.id === updatedExercise.id ? updatedExercise : ex
+        );
+        setExercises(updatedList);
+        setFilteredExercises(updatedList);  // update filtered too if needed
+    };
+    //! delete card
+    const handleExerciseDelete = (deletedId) => {
+        const updatedList = exercises.filter((ex) => ex.id !== deletedId);
+        setExercises(updatedList);
+        setFilteredExercises(updatedList);  // update filtered too if needed
+    };
     
     return (
         <div className="exercise-page">
@@ -38,7 +52,11 @@ function ExercisePage() {
 
 <div className="exercise-card-list">
     {filteredExercises.map((exercise) => (
-        <ExerciseCard key={exercise.id} exercise={exercise} />
+        <ExerciseCard key={exercise.id}
+         exercise={exercise}
+         onUpdate={handleExerciseUpdate}
+         onDelete={handleExerciseDelete}
+          />
     ))}
 </div>
 </div>
