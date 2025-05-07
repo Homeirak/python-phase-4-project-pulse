@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function HomePageCard({ workout }) {
     return (
         <Link to={`/workouts/${workout.id}`} className="home-page-card-link">

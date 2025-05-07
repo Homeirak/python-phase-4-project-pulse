@@ -1,14 +1,13 @@
-// will contain the navbars for all three 
-// put header component inside navbar if you want (see pic)
-
+//navbar.js
 import React from "react";
 import { Link } from "react-router-dom";
+import './navbar.css';
 
 function NavBar() {
     return (
         <nav className="navbar">
+            <h1 className="navbar-title">Pulse</h1>
             <ul className="nav-links">
-            <h1>Pulse</h1>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -18,10 +17,11 @@ function NavBar() {
                 <li>
                     <Link to="/workouts">Workouts</Link>
                 </li>
-                {/* For testing the details page */}
-                {/* <li>
+                {/* Uncomment for testing if needed
+                <li>
                     <Link to="/workouts/1">Workout 1 Details</Link>
-                </li> */}
+                </li>
+                */}
             </ul>
         </nav>
     );

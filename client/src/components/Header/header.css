@@ -1,0 +1,10 @@
+/* header.css */
+
+.page-header {
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(222, 135, 177);
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}

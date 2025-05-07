@@ -1,0 +1,30 @@
+/* homepage.css */
+
+.layout {
+    display: flex;
+    height: 100vh;  /* makes layout fill the full screen vertically */
+}
+
+.main-content {
+    flex: 1;                    /* take up the remaining width */
+    display: flex;
+    flex-direction: column;     /* stack Header on top of content */
+    height: 100%;
+}
+
+.home-page {
+    background-color: rgb(247, 221, 74);
+    padding: 20px;
+    flex: 1;              /* fill the space below Header */
+    overflow-y: auto;     /* make it scrollable if content overflows */
+}
+
+.home-sections {
+    background-color: rgb(74, 192, 247);
+    border: 1px solid #5680ff;
+    padding: 20px;
+}
+
+.popular-card {
+    background-color: coral;
+}

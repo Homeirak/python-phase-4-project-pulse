@@ -1,30 +1,11 @@
 // header.js
 import React from "react";
-import { useLocation } from "react-router-dom";
+import './header.css';
 
-function Header() {
-    const location = useLocation();
-
-    const getTitle = () => {
-        switch (location.pathname) {
-            case "/home":
-                return "Welcome Home";
-            case "/exercise":
-                return "Exercises";
-            case "/workouts":
-                return "Workouts";
-            case "/newexerciseform":
-                return "Create New Exercise";
-            case "/newworkoutform":
-                return "Create New Workout";
-            default:
-                return "Fitness App";
-        }
-    };
-
+function Header({ title }) {
     return (
         <header className="page-header">
-            <h1>{getTitle()}</h1>
+            <h1>{title}</h1>
         </header>
     );
 }

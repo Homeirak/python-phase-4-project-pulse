@@ -1,10 +1,14 @@
 // homepage.js
+
 import React, { useEffect, useState } from "react";
-import NavBar from "../../components/Navbar/navbar";
-import Header from "../../components/Header/header";
-import HomePageCard from "../../components/HomepageCards/homepagecard"; 
-import CardTitle from "../../components/CardTitle/cardtitle";        
-import SubHeader from "../../components/SubHeaderForHomepage/subheaderforhomepage";        
+import HomePageCard from "../../components/HomePageCard/homepagecard";
+import HomePageCardTitle from "../../components/HomePageCardTitle/homepagecardtitle";
+import SubHeader from "../../components/SubHeaderForHomepage/subheaderforhomepage";
+
+// CSS Imports
+import '../../components/HomePageCard/homepagecard.css';
+import '../../components/HomePageCardTitle/homepagecardtitle.css';
+import './homepage.css';
 
 function HomePage() {
     const [mostPopularWorkout, setMostPopularWorkout] = useState(null);
@@ -32,22 +36,21 @@ function HomePage() {
 
     return (
         <div className="home-page">
-            <SubHeader title="Your Workouts" /> 
-
+            <SubHeader title="Your Workouts" />
             <div className="home-sections">
                 <div className="most-popular-section">
-                    <CardTitle title="Most Popular" /> 
+                    <HomePageCardTitle title="Most Popular" />
                     {mostPopularWorkout ? (
-                        <HomePageCard workout={mostPopularWorkout} />
+                        <HomePageCard className="popular-card" workout={mostPopularWorkout} />
                     ) : (
                         <p>No popular workout found.</p>
                     )}
                 </div>
 
                 <div className="most-recent-section">
-                    <CardTitle title="Most Recent" /> 
+                    <HomePageCardTitle title="Most Recent" />
                     {mostRecentWorkout ? (
-                        <HomePageCard workout={mostRecentWorkout} /> 
+                        <HomePageCard workout={mostRecentWorkout} />
                     ) : (
                         <p>No recent workout found.</p>
                     )}
@@ -58,3 +61,4 @@ function HomePage() {
 }
 
 export default HomePage;
+
