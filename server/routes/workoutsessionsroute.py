@@ -63,3 +63,20 @@ class WorkoutSessionDetailResource(Resource, SerializerMixin):
             workout_data["exercise_logs"].append(log_data)
 
         return workout_data, 200
+
+# if this doesn't work
+class WorkoutSessionIdResource(Resource):
+    def delete(self, id):
+        try:
+            delete_workout_session = WorkoutSession.query.filter_by(id=id).first()
+
+            if not delete_workout_session:
+                return {'Error': 'Workout session not found'}, 404
+
+            db.session.delete(delete_workout_session)
+            db.session.commit()
+
+            return '', 204
+
+        except Exception as e:
+            return {'Error': f'Workout session deletion unsuccessful: {str(e)}'}, 500

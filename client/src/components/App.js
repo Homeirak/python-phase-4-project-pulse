@@ -14,11 +14,11 @@ import WorkoutDetailPage from "../pages/WorkoutDetailsPage/workoutdetailspage";
 function App() {
     return (
         <Router>
-            <div className="layout"> {/* ✅ global layout */}
+            <div className="layout"> {/* global layout */}
                 <NavBar />
                 <div className="main-content"> {/* right side: Header + Routes */}
                     <Routes>
-                        <Route path="/" element={<><Header title="Welcome Home" /><HomePage /></>} />
+                        <Route path="/" element={<><Header title="Dashboard" /><HomePage /></>} />
                         <Route path="/exercise" element={<><Header title="Exercises" /><ExercisePage /></>} />
                         <Route path="/workouts" element={<><Header title="Workouts" /><WorkoutPage /></>} />
                         <Route path="/newexerciseform" element={<><Header title="Create New Exercise" /><NewExerciseForm /></>} />

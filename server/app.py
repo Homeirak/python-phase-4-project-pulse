@@ -7,7 +7,8 @@ from models.exerciselog import ExerciseLog
 
 # routes
 from routes.exerciseroute import ExercisesResource, ExerciseIdResource
-from routes.workoutsessionsroute import WorkoutSessionResource, WorkoutSessionDetailResource
+# add the import here comma and then the new class name
+from routes.workoutsessionsroute import WorkoutSessionResource, WorkoutSessionDetailResource, WorkoutSessionIdResource
 from routes.exerciselogsroute import  ExerciseLogResource
 # Standard library imports
 
@@ -32,7 +33,8 @@ api.add_resource(ExerciseIdResource, '/exercises/<int:exercise_id>')
 api.add_resource(WorkoutSessionResource, '/workoutsessions')
 api.add_resource(WorkoutSessionDetailResource, '/workoutsessions/<int:id>')
 api.add_resource(ExerciseLogResource, '/exerciselogs')
-
+# add the route here
+api.add_resource(WorkoutSessionIdResource, '/workout_sessions/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

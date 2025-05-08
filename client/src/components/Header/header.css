@@ -2,9 +2,13 @@
 
 .page-header {
     margin: 0;
-    padding: 20px;
-    background-color: rgb(222, 135, 177);
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: #9889e2;
+    color: white;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
 }
+
+

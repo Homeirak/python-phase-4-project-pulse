@@ -1,7 +1,5 @@
 // workoutpage.js
 import React, { useEffect, useState } from "react";
-import NavBar from "../../components/Navbar/navbar";
-import Header from "../../components/Header/header";
 import CreateNewButton from "../../components/CreateNewButton/createnewbutton";
 import WorkoutCard from "../../components/WorkoutCard/workoutcard";
 
@@ -10,7 +8,6 @@ function WorkoutPage() {
 
     useEffect(() => {
         fetch("http://localhost:5555/workoutsessions")
-
             .then((res) => res.json())
             .then((data) => {
                 console.log("Fetched Data in Workouts:", data);
@@ -32,3 +29,4 @@ function WorkoutPage() {
 }
 
 export default WorkoutPage;
+

@@ -1,10 +1,8 @@
 // workoutdetailspage.js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavBar from "../../components/Navbar/navbar";
-import Header from "../../components/Header/header";
 import ExerciseLogList from "../../components/ExerciseLogList/exerciseloglist";
-import NewExerciseLogForm from "../../components/ NewExerciseLogForm/newexerciselogform";
+import NewExerciseLogForm from "../../components/NewExerciseLogForm/newexerciselogform";
 
 function WorkoutDetailPage() {
     const { id } = useParams();
@@ -22,12 +20,11 @@ function WorkoutDetailPage() {
     }, [id]);
 
     const handleAddLog = (newLog) => {
-        setExerciseLogs([...exerciseLogs, newLog]);
+        setExerciseLogs((prevLogs) => [...prevLogs, newLog]);
     };
 
     return (
         <div className="workout-detail-page">
-            
             {workout ? (
                 <div>
                     <h2>{workout.name}</h2>
