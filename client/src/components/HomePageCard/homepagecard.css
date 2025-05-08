@@ -1,0 +1,29 @@
+/* homepagecard.css */
+
+.home-page-card {
+    border: 2px solid #5544ad;      /* purple border */
+    border-radius: 10px;           /* rounded corners */
+    padding: 20px;
+    background-color: #fff;        /* optional: white background */
+    text-align: center;
+    transition: transform 0.8s;    /* optional: hover effect */
+
+    font-family: 'Cambria', serif;
+    font-weight: bold;
+
+    /* height: 40%;
+    width: 50%; */
+    /* width: 100%;                 */
+    /* max-width: 500px;            */
+    border: 2px solid #9889e2;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    font-family: 'Cambria', serif;
+    font-weight: bold;
+}
+
+.home-page-card:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}

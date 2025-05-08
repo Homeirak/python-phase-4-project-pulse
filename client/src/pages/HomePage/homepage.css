@@ -12,24 +12,33 @@
     height: 100%;
 }
 
-/* the whole container */
+/* parent container - the whole home page excl navbar & header */
 .home-page {
-    background-color: white;
+    background-color: yellow;
     padding: 20px;
     flex: 1;              /* fill the space below Header */
     overflow-y: auto;     /* make it scrollable if content overflows */
 }
 
+/* sub-container with the most popular and recent workout cards  */
 .home-sections {
-    background-color: white;
-    border: 2px solid #5680ff;   /* ⬅️ Thicker border */
-    border-radius: 10px;         /* ⬅️ Rounded corners */
+    display: flex;
+    gap: 20px;              /* space between the two cards */
+    justify-content: center; /* optional: center them horizontally */
+    flex-wrap: wrap;  
+    
+    /* rounded corners */
+    /* thicker border */
+    
+    border: 2px solid #9889e2;   
+    border-radius: 10px;         
     padding: 20px;
 }
 
+/* Container with Most Popular Card Title and Most Popular Workout Card */
 .most-popular-section{
-    background-color: rgb(121, 21, 21);
+    background-color: whitesmoke;
 }
 .popular-card {
-    background-color: white;
+    background-color: aqua;
 }
