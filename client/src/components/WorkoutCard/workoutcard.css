@@ -1,0 +1,43 @@
+/* workoutcard.css */
+
+.workout-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+    max-width: 400px; /* Optional: limit width */
+}
+
+
+.workout-card h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #5e35b1;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.workout-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+.workout-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+a {
+    text-decoration: none; /* Remove underline from Link */
+}

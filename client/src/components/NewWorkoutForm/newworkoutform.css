@@ -1,0 +1,80 @@
+/* newworkoutform.css */
+
+.new-workout-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f5f3ff; /* soft light purple background */
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(126, 87, 194, 0.2); /* purple shadow */
+  }
+ 
+  .new-workout-form h2 {
+    text-align: center;
+    color: #5e35b1; /* deep purple */
+    margin-bottom: 1.5rem;
+  }
+ 
+  .new-workout-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+ 
+  .new-workout-form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+ 
+  .new-workout-form input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1c4e9; /* light purple border */
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+ 
+  .new-workout-form input:focus {
+    border-color: #7e57c2; /* highlight border on focus */
+    box-shadow: 0 0 8px rgba(126, 87, 194, 0.4);
+  }
+ 
+  .new-workout-form .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+ 
+  .new-workout-form button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  }
+ 
+  .new-workout-form button[type="submit"] {
+    background-color: #7e57c2;
+    color: white;
+  }
+ 
+  .new-workout-form button[type="submit"]:hover {
+    background-color: #673ab7;
+    box-shadow: 0 0 10px rgba(126, 87, 194, 0.7);
+    transform: scale(1.03);
+  }
+ 
+  .new-workout-form button[type="button"] {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+ 
+  .new-workout-form button[type="button"]:hover {
+    background-color: #d5d5d5;
+    transform: scale(1.03);
+  }

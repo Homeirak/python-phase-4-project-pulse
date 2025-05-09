@@ -1,5 +1,6 @@
 // dropdownfilter.js
 import React, { useState, useEffect } from "react";
+import './dropdownfilter.css'
 
 const DropdownFilter = ({ exercises, setFilteredExercises }) => {
     const [muscleGroupFilter, setMuscleGroupFilter] = useState("");

@@ -1,0 +1,19 @@
+/* createnewbutton.css */
+
+.create-new-button {
+    background-color: #7e57c2; /* deep purple */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    margin: right;
+    width: 300px;
+  }
+ 
+  .create-new-button:hover {
+    box-shadow: 0 0 12px rgba(126, 87, 194, 0.7); /* purple glow */
+    transform: scale(1.05); /* subtle grow on hover */
+  }

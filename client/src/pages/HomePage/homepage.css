@@ -14,31 +14,72 @@
 
 /* parent container - the whole home page excl navbar & header */
 .home-page {
-    background-color: yellow;
     padding: 20px;
     flex: 1;              /* fill the space below Header */
     overflow-y: auto;     /* make it scrollable if content overflows */
+    font-family: 'Arial', sans-serif;
+    background-color: #f3e5f5; /* Light lavender background */
+    padding: 2rem; 
 }
 
 /* sub-container with the most popular and recent workout cards  */
 .home-sections {
     display: flex;
-    gap: 20px;              /* space between the two cards */
-    justify-content: center; /* optional: center them horizontally */
+    gap: 20px;              
+    justify-content: center;
     flex-wrap: wrap;  
-    
+    display: flex;
+    gap: 6rem;
+   
     /* rounded corners */
     /* thicker border */
-    
-    border: 2px solid #9889e2;   
-    border-radius: 10px;         
+   
+    border: 2px solid #9889e2;  
+    border-radius: 10px;        
     padding: 20px;
 }
 
 /* Container with Most Popular Card Title and Most Popular Workout Card */
-.most-popular-section{
-    background-color: whitesmoke;
+.home-sections .most-popular-section,
+.home-sections .most-recent-section {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(103, 58, 183, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.popular-card {
-    background-color: aqua;
+
+.home-sections .most-popular-section:hover,
+.home-sections .most-recent-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(103, 58, 183, 0.2);
+}
+
+.home-sections .most-popular-section p,
+.home-sections .most-recent-section p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7e57c2;
+}
+
+/* Title styling for each section */
+.home-sections h3 {
+    text-align: center;
+    color: #7e57c2;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Card styles */
+  /* Sub-header styling for the homepage */
+  .home-page h2 {
+    text-align: center;
+    color: #7e57c2;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .your-workouts {
+    font-family: 'Courier New';
 }

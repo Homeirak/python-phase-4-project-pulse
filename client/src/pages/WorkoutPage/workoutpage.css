@@ -1,0 +1,30 @@
+/* workoutpage.css */
+.workout-page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+ 
+  .workout-page > .createnewbutton-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* More specific class selector */
+  .workout-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* wider cards */
+    gap: 1.5rem; /* slightly more gap for better spacing */
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+ 
+ 
+  /* Center the button */
+  .button-container.center {
+    justify-content: center;
+  }

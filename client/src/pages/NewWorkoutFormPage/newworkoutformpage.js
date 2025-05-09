@@ -1,6 +1,7 @@
 // newworkoutformpage.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './newworkoutformpage.css'
 
 function NewWorkoutForm() {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ function NewWorkoutForm() {
             .then((res) => res.json())
             .then(() => {
                 //go back to workouts page after submit
-                navigate("/workouts"); 
+                navigate("/workouts");
             })
             .catch((error) => console.error("Error creating workout:", error));
     };

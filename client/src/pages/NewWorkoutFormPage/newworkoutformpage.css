@@ -1,0 +1,79 @@
+/* newworkoutformpage.css */
+.new-workout-form input,
+.new-workout-form button,
+.new-workout-form label {
+  all: unset; /* Clears any browser default AND framework styles */
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Apply your custom styles after clearing */
+.new-workout-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f5f3ff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(126, 87, 194, 0.2);
+}
+
+.new-workout-form h2 {
+  text-align: center;
+  color: #5e35b1;
+  margin-bottom: 1.5rem;
+}
+
+.new-workout-form .input-group {
+  margin-bottom: 1rem;
+}
+
+.new-workout-form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1c4e9;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: white;
+  color: black;
+}
+
+.new-workout-form input:focus {
+  border-color: #7e57c2;
+  box-shadow: 0 0 8px rgba(126, 87, 194, 0.4);
+}
+
+.new-workout-form .form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.new-workout-form button {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.new-workout-form button[type="submit"] {
+  background-color: #7e57c2;
+  color: white;
+}
+
+.new-workout-form button[type="submit"]:hover {
+  background-color: #673ab7;
+  box-shadow: 0 0 10px rgba(126, 87, 194, 0.7);
+  transform: scale(1.03);
+}
+
+.new-workout-form button[type="button"] {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.new-workout-form button[type="button"]:hover {
+  background-color: #d5d5d5;
+  transform: scale(1.03);
+}

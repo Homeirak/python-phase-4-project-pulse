@@ -5,6 +5,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import './createnewbutton.css'
 
 function CreateNewButton({ to, label }) {
     return (
@@ -15,5 +16,6 @@ function CreateNewButton({ to, label }) {
         </Link>
     );
 }
+
 
 export default CreateNewButton;

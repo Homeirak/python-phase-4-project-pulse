@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ExerciseLogList from "../../components/ExerciseLogList/exerciseloglist";
 import NewExerciseLogForm from "../../components/NewExerciseLogForm/newexerciselogform";
+import './workoutdetailspage.css'
+import ExerciseCard from "../../components/ExerciseCard/exercisecard";
+import { formatDate } from '../../utils/format-date-MM-DD-YY';
 
 function WorkoutDetailPage() {
     const { id } = useParams();
@@ -28,9 +31,10 @@ function WorkoutDetailPage() {
             {workout ? (
                 <div>
                     <h2>{workout.name}</h2>
-                    <p>Date: {workout.date}</p>
+                    <p>Date: {formatDate(workout.date)}</p>
 
                     <h3>Exercise Logs</h3>
+                   
                     <ExerciseLogList logs={exerciseLogs} />
 
                     <h3>Add New Exercise Log</h3>

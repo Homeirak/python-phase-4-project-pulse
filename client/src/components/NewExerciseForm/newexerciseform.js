@@ -1,5 +1,7 @@
+// newexerciseform.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './newexerciseform.css'
 
 function NewExerciseForm() {
     const navigate = useNavigate();
@@ -27,13 +29,13 @@ function NewExerciseForm() {
         })
             .then((res) => res.json())
             .then(() => {
-                navigate("/exercise"); // ✅ Navigate back after submit
+                navigate("/exercise");
             })
             .catch((error) => console.error("Error creating exercise:", error));
     };
 
     const handleCancel = () => {
-        navigate("/exercise"); // ✅ Navigate back on cancel
+        navigate("/exercise");
     };
 
     return (

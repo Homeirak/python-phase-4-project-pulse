@@ -1,0 +1,42 @@
+/* exerciseloglist.css */
+
+/* Exercise Log List Items */
+.exercise-log-list ul {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+}
+
+
+.exercise-log-item {
+    background-color: #b890fe;  
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #ffffff;  
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.exercise-log-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+.exercise-log-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
+    text-align: center;
+}
+
+
+.exercise-log-item p {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    text-align: center;
+}

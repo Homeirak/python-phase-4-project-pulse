@@ -1,6 +1,7 @@
 // newexerciseformpage.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './newexerciseformpage.css'
 
 function NewExerciseFormPage() {
     const navigate = useNavigate();

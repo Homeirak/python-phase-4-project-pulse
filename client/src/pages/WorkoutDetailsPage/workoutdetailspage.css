@@ -1,0 +1,153 @@
+/* workoutdetailspage.css */
+
+.workout-detail-page {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    background-color: #f9f9ff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New';
+    
+}
+
+
+/* Title Styles */
+.workout-detail-page h2 {
+    font-size: 2.5rem;
+    color: #5e35b1;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+.workout-detail-page p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+
+/* Subheading Styles */
+.workout-detail-page h3 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid #7e57c2;
+    padding-bottom: 0.6rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+
+/* Exercise Log List Styling */
+.exercise-log-list {
+    margin-bottom: 2rem;
+}
+
+
+/* Exercise Log Card */
+.exercise-log-card {
+    background-color: #eac1ff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+
+.exercise-log-card h4 {
+    font-size: 1.4rem;
+    color: #7e57c2;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+
+.exercise-log-card p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+
+ul, ol {
+    list-style-type: none;  /* Removes the bullet point */
+    padding-left: 0;  /* Removes any indentation */
+}
+h4{
+    color: rgb(70, 11, 132);
+    margin: 0;  /* Removes any margin that might cause spacing */
+    font-size: 1.4rem;  /* You can adjust the size */
+    text-align: center;  /* Centers the inline element */
+
+
+    font-weight: 500;  /* You can adjust the weight */
+}
+
+
+/* New Exercise Log Form Styling */
+.workout-detail-page .new-exercise-log-form {
+    padding: 1.5rem;
+    background-color: #f3e7fd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.workout-detail-page .new-exercise-log-form input,
+.workout-detail-page .new-exercise-log-form select,
+.workout-detail-page .new-exercise-log-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+
+/* Button Styling */
+.workout-detail-page .new-exercise-log-form button {
+    background-color: #5e35b1;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.workout-detail-page .new-exercise-log-form button:hover {
+    background-color: #7e57c2;
+}
+
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 600px) {
+    .workout-detail-page {
+        padding: 1.5rem 1rem;
+    }
+
+
+    .workout-detail-page h2 {
+        font-size: 2rem;
+    }
+
+
+    .workout-detail-page h3 {
+        font-size: 1.4rem;
+    }
+
+
+    .exercise-log-card {
+        padding: 1rem;
+    }
+}

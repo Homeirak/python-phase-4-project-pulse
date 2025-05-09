@@ -1,6 +1,7 @@
 // exercisecard.js
 import React, { useState } from "react";
 import { Pencil, Trash2 } from 'lucide-react'
+import './exercisecard.css'
 
 function ExerciseCard({ exercise, onDelete, onUpdate }) {
     const [isEditing, setIsEditing] = useState(false);
@@ -45,16 +46,17 @@ function ExerciseCard({ exercise, onDelete, onUpdate }) {
                 <form onSubmit={handleUpdate}>
                     <input
                         type="text"
-                        value={editName}
-                        onChange={(e) => setEditName(e.target.value)}
-                        placeholder="Exercise Name"
+                        value={editCategory}
+                        onChange={(e) => setEditCategory(e.target.value)}
+                        placeholder="Category"
                         required
                     />
                     <input
                         type="text"
-                        value={editDescription}
-                        onChange={(e) => setEditDescription(e.target.value)}
-                        placeholder="Description"
+                        value={editName}
+                        onChange={(e) => setEditName(e.target.value)}
+                        placeholder="Exercise Name"
+                        required
                     />
                     <input
                         type="text"
@@ -72,10 +74,9 @@ function ExerciseCard({ exercise, onDelete, onUpdate }) {
                     />
                     <input
                         type="text"
-                        value={editCategory}
-                        onChange={(e) => setEditCategory(e.target.value)}
-                        placeholder="Category"
-                        required
+                        value={editDescription}
+                        onChange={(e) => setEditDescription(e.target.value)}
+                        placeholder="Description"
                     />
                     <button type="submit">Save</button>
                     <button type="button" onClick={() => setIsEditing(false)}>
@@ -84,17 +85,22 @@ function ExerciseCard({ exercise, onDelete, onUpdate }) {
                 </form>
             ) : (
                 <>
-                    <h3>{exercise.name}</h3>
-                    <h4>{exercise.muscle_group}</h4>
-                    <h4>{exercise.equipment}</h4>
-                    <p>{exercise.description}</p>
-                    <h4>{exercise.category}</h4>
-                    
-                    <button onClick={() => setIsEditing(true)}>
-                    <Pencil size={14.5}></Pencil>
-                    </button>
-                    
-                    <button onClick={handleDelete}><Trash2 size={14.5}></Trash2></button>
+                    <ul className="exercise-details">
+                        <li className="exercise-name">{exercise.name}</li>
+                        <li><strong>Category:</strong> {exercise.category}</li>
+                        <li><strong>Muscle Group:</strong> {exercise.muscle_group}</li>
+                        <li><strong>Equipment:</strong> {exercise.equipment}</li>
+                        <li><strong>Description:</strong> {exercise.description}</li>
+                    </ul>
+
+                    <div className="card-actions">
+                        <button onClick={() => setIsEditing(true)}>
+                            <Pencil size={14.5}></Pencil>
+                        </button>
+                        <button onClick={handleDelete}>
+                            <Trash2 size={14.5}></Trash2>
+                        </button>
+                    </div>
                 </>
             )}
         </div>

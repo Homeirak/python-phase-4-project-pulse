@@ -1,29 +1,39 @@
 /* homepagecard.css */
 
-.home-page-card {
-    border: 2px solid #5544ad;      /* purple border */
-    border-radius: 10px;           /* rounded corners */
-    padding: 20px;
-    background-color: #fff;        /* optional: white background */
+.home-page-card-link {
+    text-decoration: none;
+  }
+ 
+  .home-page-card {
+    background-color: #ebd3ff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(103, 58, 183, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+  }
+ 
+  .home-page-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(103, 58, 183, 0.2);
+  }
+ 
+  .home-page-card-title {
+    font-size: 1.5rem;
+    color: #5e35b1; /* Purple for titles */
+    margin-bottom: 0.5rem;
     text-align: center;
-    transition: transform 0.8s;    /* optional: hover effect */
-
-    font-family: 'Cambria', serif;
+  }
+ 
+  .home-page-card p {
+    font-size: 1rem;
+    color: #7e57c2; /* Slightly lighter purple for text */
+  }
+ 
+  .home-page-card p:first-child {
+    margin-top: 0;
+  }
+ 
+  .home-page-card p:last-child {
     font-weight: bold;
-
-    /* height: 40%;
-    width: 50%; */
-    /* width: 100%;                 */
-    /* max-width: 500px;            */
-    border: 2px solid #9889e2;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #fff;
-    font-family: 'Cambria', serif;
-    font-weight: bold;
-}
-
-.home-page-card:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
+  }

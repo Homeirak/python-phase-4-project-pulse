@@ -1,5 +1,6 @@
 // exerciseloglist.js
 import React from "react";
+import './exerciseloglist.css'
 
 
 function ExerciseLogList({ logs }) {
@@ -12,8 +13,8 @@ function ExerciseLogList({ logs }) {
                     {logs.map((log) => (
                         <li key={log.id} className="exercise-log-item">
                             <h4>{log.exercise ? log.exercise.name : "Unnamed Exercise"}</h4>
-                            <p>Reps: {log.reps}</p>
                             <p>Sets: {log.sets}</p>
+                            <p>Reps: {log.reps}</p>
                             <p>Weight: {log.weight}</p>
                             <p>Time: {log.time}</p>
                         </li>
@@ -23,5 +24,6 @@ function ExerciseLogList({ logs }) {
         </div>
     );
 }
+
 
 export default ExerciseLogList;

@@ -1,5 +1,4 @@
 // homepage.js
-
 import React, { useEffect, useState } from "react";
 import HomePageCard from "../../components/HomePageCard/homepagecard";
 import HomePageCardTitle from "../../components/HomePageCardTitle/homepagecardtitle";
@@ -36,7 +35,7 @@ function HomePage() {
 
     return (
         <div className="home-page">
-            <SubHeader title="Your Workouts" />
+            <SubHeader className="your-workouts" title="Your Workouts" />
             <div className="home-sections">
                 <div className="most-popular-section">
                     <HomePageCardTitle title="Most Popular" />
@@ -61,4 +60,3 @@ function HomePage() {
 }
 
 export default HomePage;
-

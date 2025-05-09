@@ -1,0 +1,32 @@
+/* dropdownfilter.css */
+
+/* Container styling */
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+ 
+  /* Dropdown styling */
+  .filter-dropdown {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 300px;
+  }
+ 
+  .filter-dropdown:focus {
+    border-color: #74389c;
+    box-shadow: 0 0 0 3px rgba(142, 76, 175, 0.2);
+    outline: none;
+  }
+ 
+  .filter-dropdown option {
+    color: #333;
+  }
